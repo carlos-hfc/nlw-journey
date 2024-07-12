@@ -14,6 +14,7 @@ import { createTrip } from "./route/create-trip"
 import { getActivity } from "./route/get-activities"
 import { getLink } from "./route/get-links"
 import { getParticipant } from "./route/get-participants"
+import { getTripDetails } from "./route/get-trip-details"
 import { updateTrip } from "./route/update-trip"
 
 const app = fastify()
@@ -35,5 +36,6 @@ app.register(getLink)
 app.register(getParticipant)
 app.register(createInvite)
 app.register(updateTrip)
+app.register(getTripDetails)
 
 app.listen({ port: 3333 }).then(() => console.log("HTTP server running"))
