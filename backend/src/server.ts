@@ -5,6 +5,7 @@ import {
   validatorCompiler,
 } from "fastify-type-provider-zod"
 
+import { env } from "./env"
 import { errroHandler } from "./error-handler"
 import { confirmParticipant } from "./route/confirm-participant"
 import { confirmTrip } from "./route/confirm-trip"
@@ -43,4 +44,4 @@ app.register(updateTrip)
 app.register(getTripDetails)
 app.register(getParticipant)
 
-app.listen({ port: 3333 }).then(() => console.log("HTTP server running"))
+app.listen({ port: env.PORT }).then(() => console.log("HTTP server running"))

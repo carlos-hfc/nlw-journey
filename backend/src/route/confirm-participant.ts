@@ -2,6 +2,7 @@ import { FastifyInstance } from "fastify"
 import { ZodTypeProvider } from "fastify-type-provider-zod"
 import z from "zod"
 
+import { env } from "../env"
 import { ClientError } from "../errors/client-error"
 import { prisma } from "../lib/prisma"
 
@@ -29,9 +30,7 @@ export async function confirmParticipant(app: FastifyInstance) {
       }
 
       if (participant.isConfirmed) {
-        return reply.redirect(
-          `http://localhost:3000/trips/${participant.tripId}`,
-        )
+        return reply.redirect(`${env.WEB_BASE_URL}/trips/${participant.tripId}`)
       }
 
       await prisma.participant.update({
@@ -43,7 +42,7 @@ export async function confirmParticipant(app: FastifyInstance) {
         },
       })
 
-      return reply.redirect(`http://localhost:3000/trips/${participant.tripId}`)
+      return reply.redirect(`${env.WEB_BASE_URL}/trips/${participant.tripId}`)
     },
   )
 }
