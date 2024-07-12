@@ -11,9 +11,9 @@ import { createActivity } from "./route/create-activity"
 import { createInvite } from "./route/create-invite"
 import { createLink } from "./route/create-link"
 import { createTrip } from "./route/create-trip"
-import { getActivity } from "./route/get-activities"
-import { getLink } from "./route/get-links"
-import { getParticipant } from "./route/get-participants"
+import { getActivities } from "./route/get-activities"
+import { getLinks } from "./route/get-links"
+import { getParticipants } from "./route/get-participants"
 import { getTripDetails } from "./route/get-trip-details"
 import { updateTrip } from "./route/update-trip"
 
@@ -30,10 +30,10 @@ app.register(createTrip)
 app.register(confirmTrip)
 app.register(confirmParticipant)
 app.register(createActivity)
-app.register(getActivity)
+app.register(getActivities)
 app.register(createLink)
-app.register(getLink)
-app.register(getParticipant)
+app.register(getLinks)
+app.register(getParticipants)
 app.register(createInvite)
 app.register(updateTrip)
 app.register(getTripDetails)

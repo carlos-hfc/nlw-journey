@@ -5,7 +5,7 @@ import z from "zod"
 import { dayjs } from "../lib/dayjs"
 import { prisma } from "../lib/prisma"
 
-export async function getActivity(app: FastifyInstance) {
+export async function getActivities(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().get(
     "/trips/:tripId/activities",
     {

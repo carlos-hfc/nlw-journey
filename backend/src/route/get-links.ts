@@ -4,7 +4,7 @@ import z from "zod"
 
 import { prisma } from "../lib/prisma"
 
-export async function getLink(app: FastifyInstance) {
+export async function getLinks(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().get(
     "/trips/:tripId/links",
     {
