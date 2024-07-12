@@ -5,6 +5,7 @@ import {
   validatorCompiler,
 } from "fastify-type-provider-zod"
 
+import { confirmParticipant } from "./route/confirm-participant"
 import { confirmTrip } from "./route/confirm-trip"
 import { createTrip } from "./route/create-trip"
 
@@ -19,5 +20,6 @@ app.setSerializerCompiler(serializerCompiler)
 
 app.register(createTrip)
 app.register(confirmTrip)
+app.register(confirmParticipant)
 
 app.listen({ port: 3333 }).then(() => console.log("HTTP server running"))
