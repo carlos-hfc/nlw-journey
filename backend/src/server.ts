@@ -5,6 +5,7 @@ import {
   validatorCompiler,
 } from "fastify-type-provider-zod"
 
+import { errroHandler } from "./error-handler"
 import { confirmParticipant } from "./route/confirm-participant"
 import { confirmTrip } from "./route/confirm-trip"
 import { createActivity } from "./route/create-activity"
@@ -26,6 +27,8 @@ app.register(fastifyCors, {
 
 app.setValidatorCompiler(validatorCompiler)
 app.setSerializerCompiler(serializerCompiler)
+
+app.setErrorHandler(errroHandler)
 
 app.register(createTrip)
 app.register(confirmTrip)
