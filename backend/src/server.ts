@@ -8,6 +8,7 @@ import {
 import { confirmParticipant } from "./route/confirm-participant"
 import { confirmTrip } from "./route/confirm-trip"
 import { createActivity } from "./route/create-activity"
+import { createInvite } from "./route/create-invite"
 import { createLink } from "./route/create-link"
 import { createTrip } from "./route/create-trip"
 import { getActivity } from "./route/get-activities"
@@ -31,5 +32,6 @@ app.register(getActivity)
 app.register(createLink)
 app.register(getLink)
 app.register(getParticipant)
+app.register(createInvite)
 
 app.listen({ port: 3333 }).then(() => console.log("HTTP server running"))
